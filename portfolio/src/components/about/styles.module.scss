@@ -1,0 +1,462 @@
+@import '../../index.scss';
+
+
+//M0bile View
+.container {
+    width: calc(100% - 20px);
+    height: 100%;
+    @include flex(column, space-evenly, center);
+    margin-top: 15%;
+
+
+    .profile_image {
+        display: none;
+    }
+
+    .about_me_container {
+        position: relative;
+        width: 100%;
+        @include flex(column, center, center);
+        padding: 10px;
+
+        .buttonContainer {
+            height: 100%;
+            width: 100%;
+            @include flex(row, center, center);
+            margin-top: updatedSize(30);
+
+            .button {
+                width: updatedSize(250);
+                height: updatedSize(60);
+                border-radius: updatedSize(50);
+                background-color: $STATUS_YELLOW;
+                color: $BACKGROUND_BLACK_DARK;
+                font-size: updatedSize(19);
+                font-weight: 600;
+                font-family: $POPPINS_ARIAL_SAN_SERIF;
+                border: 1px solid $BACKGROUND_BLACK_DARK;
+            }
+        }
+
+        .about_label {
+            position: absolute;
+            top: 2%;
+            left: 10;
+            font-size: updatedSize(50);
+            font-weight: 900;
+            z-index: -1;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .about_me {
+            font-size: updatedSize(30);
+            font-weight: 700;
+            text-align: center;
+
+            .self_intro_label {
+                margin-top: updatedSize(30);
+                font-size: updatedSize(20);
+                font-family: $TSUKUMI_ROUNDED;
+                font-weight: 700;
+                color: $TEXT_GREY_NINTEEN;
+                margin: updatedSize(30) 0;
+                padding: updatedSize(20);
+                text-align: justify;
+            }
+        }
+
+        .secondary_container {
+            margin-top: updatedSize(40);
+
+            width: 100%;
+
+            .label_value_container {
+                padding: updatedSize(20) 0;
+                width: 100%;
+                @include flex(column, center, center);
+
+                .label {
+                    font-family: $ROBOTO;
+                    letter-spacing: 1px;
+                    line-height: 10px;
+                    font-weight: 600;
+                    color: $BACKGROUND_WHITE;
+                    font-size: updatedSize(20);
+                    margin-bottom: updatedSize(25);
+                }
+
+                .value {
+                    font-family: $TSUKUMI_ROUNDED;
+                    font-weight: 800;
+                    color: $TEXT_GREY_NEW;
+                    font-size: updatedSize(20);
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+//Media Query till 768 Px
+@media screen and (min-width:426px) and (max-width:768px) {
+    .container {
+        width: calc(100% - 20px);
+        height: 100%;
+        @include flex(column, space-evenly, center);
+        // margin-top: updatedSize(80);
+
+        .profile_image {
+            display: none;
+        }
+
+        .about_me_container {
+            position: relative;
+            width: 100%;
+            @include flex(column, center, center);
+            padding: 10px;
+
+            .about_label {
+                position: absolute;
+                top: 4%;
+                left: 10;
+                font-size: updatedSize(100);
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .about_me {
+                font-size: updatedSize(50);
+                font-weight: 700;
+                text-align: center;
+
+                .self_intro_label {
+                    margin-top: updatedSize(30);
+                    font-size: updatedSize(23);
+                    font-family: $TSUKUMI_ROUNDED;
+                    font-weight: 700;
+                    color: $TEXT_GREY_NINTEEN;
+                    margin: updatedSize(30);
+                    padding: updatedSize(30);
+                    text-align: justify;
+                }
+            }
+
+            .secondary_container {
+                margin-top: updatedSize(40);
+                // @include flex(column, center, center);
+                width: 100%;
+
+                .label_value_container {
+                    width: 100%;
+                    @include flex(row, center, center);
+                    flex-wrap: wrap;
+                    word-wrap: break-word;
+
+                    .label {
+                        font-family: $ROBOTO;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                        color: $BACKGROUND_WHITE;
+                        font-size: updatedSize(23);
+                        width: 50%;
+                        margin-bottom: 0;
+                        text-align: center;
+                    }
+
+                    .value {
+                        font-family: $TSUKUMI_ROUNDED;
+                        font-weight: 800;
+                        color: $TEXT_GREY_NEW;
+                        font-size: updatedSize(18);
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media screen and (min-width:769px) and (max-width:900px) {
+    .container {
+        height: 100%;
+        @include flex(row, center, start);
+        column-gap: 5%;
+
+        .profile_image {
+            width: 50%;
+            height: 100%;
+            aspect-ratio: 1/1;
+            order: 1;
+            display: block;
+        }
+
+        ;
+
+
+        .about_me_container {
+            order: 2;
+            position: relative;
+            width: 50%;
+            padding: 0;
+
+
+            .buttonContainer {
+                height: 100%;
+                width: 100%;
+                @include flex(row, start, center);
+            }
+
+
+            .about_label {
+                position: absolute;
+                top: 1%;
+                left: 10;
+                font-size: 7vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .about_me {
+                font-size: updatedSize(40);
+                font-weight: 700;
+
+                .self_intro_label {
+                    font-size: updatedSize(18);
+                    font-family: $TSUKUMI_ROUNDED;
+                    color: $TEXT_GREY_NINTEEN;
+                    margin: updatedSize(20) 0 0 0;
+                }
+            }
+
+            .secondary_container {
+                @include flex(column, space-evenly, start);
+                width: 100%;
+                margin: 0;
+                padding: 0;
+
+                .label_value_container {
+                    width: 100%;
+                    padding: updatedSize(15);
+                    @include flex(row, space-between, center);
+                    flex-wrap: wrap;
+                    word-wrap: break-word;
+
+                    .label {
+                        font-family: $ROBOTO;
+                        letter-spacing: 1px;
+                        line-height: 10px;
+                        font-weight: 600;
+                        color: $BACKGROUND_WHITE;
+                        font-size: updatedSize(19);
+                        margin-bottom: 0;
+                        width: 50%;
+                    }
+
+                    .value {
+                        font-family: $TSUKUMI_ROUNDED;
+                        font-weight: 800;
+                        color: $TEXT_GREY_NEW;
+                        font-size: updatedSize(19);
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+//Media Query till 1199 Px
+@media screen and (min-width:901px) and (max-width:1199px) {
+    .container {
+        height: 100%;
+        @include flex(row, center, start);
+        column-gap: 5%;
+
+        .profile_image {
+            width: 50%;
+            height: 100%;
+            aspect-ratio: 1/1;
+            order: 1;
+            display: block;
+        }
+
+
+        .about_me_container {
+            order: 2;
+            position: relative;
+            width: 50%;
+            padding: 0;
+
+
+            .buttonContainer {
+                height: 100%;
+                width: 100%;
+                @include flex(row, start, center);
+            }
+
+
+            .about_label {
+                position: absolute;
+                top: 1%;
+                left: 10;
+                font-size: 7vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .about_me {
+                font-size: updatedSize(40);
+                font-weight: 700;
+
+                .self_intro_label {
+                    font-size: updatedSize(18);
+                    font-family: $TSUKUMI_ROUNDED;
+                    color: $TEXT_GREY_NINTEEN;
+                    margin: updatedSize(20) 0 0 0;
+                }
+            }
+
+            .secondary_container {
+                @include flex(column, space-evenly, start);
+                width: 100%;
+                margin: 0;
+                padding: 0;
+
+                .label_value_container {
+                    width: 100%;
+                    padding: updatedSize(15);
+                    @include flex(row, space-between, center);
+                    flex-wrap: wrap;
+                    word-wrap: break-word;
+
+                    .label {
+                        font-family: $ROBOTO;
+                        letter-spacing: 1px;
+                        line-height: 10px;
+                        font-weight: 600;
+                        color: $BACKGROUND_WHITE;
+                        font-size: updatedSize(19);
+                        margin-bottom: 0;
+                        width: 30%;
+                    }
+
+                    .value {
+                        font-family: $TSUKUMI_ROUNDED;
+                        font-weight: 800;
+                        color: $TEXT_GREY_NEW;
+                        font-size: updatedSize(19);
+                        width: 70%;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+//Media Query till 1200 Px
+@media screen and (min-width:1200px) {
+    .container {
+        height: 100%;
+        @include flex(row, center, start);
+        column-gap: 5%;
+
+        .profile_image {
+            width: 40%;
+            height: 100%;
+            aspect-ratio: 1/1;
+            order: 1;
+            display: block;
+        }
+
+        ;
+
+
+        .about_me_container {
+            order: 2;
+            position: relative;
+            width: 50%;
+            padding: 0;
+
+            .buttonContainer {
+                height: 100%;
+                width: 100%;
+                @include flex(row, start, center);
+            }
+
+            .about_label {
+                position: absolute;
+                top: 0%;
+                left: 10;
+                font-size: 7vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .about_me {
+                font-size: 3.5vw;
+                font-weight: 700;
+
+                .self_intro_label {
+                    font-size: updatedSize(18);
+                    font-family: $TSUKUMI_ROUNDED;
+                    color: $TEXT_GREY_NINTEEN;
+                    margin: updatedSize(80) 0 0 0;
+
+                }
+            }
+
+            .secondary_container {
+                @include flex(column, space-evenly, start);
+                width: 100%;
+                margin: 0;
+                padding: 0;
+
+                .label_value_container {
+                    width: 100%;
+                    padding: updatedSize(15);
+                    @include flex(row, space-between, center);
+                    flex-wrap: wrap;
+                    word-wrap: break-word;
+
+                    .label {
+                        font-family: $ROBOTO;
+                        letter-spacing: 1px;
+                        line-height: 0;
+                        font-weight: 600;
+                        color: $BACKGROUND_WHITE;
+                        font-size: updatedSize(20);
+                        // width: 30%;
+                        margin-bottom: 0;
+
+                    }
+
+                    .value {
+                        font-family: $TSUKUMI_ROUNDED;
+                        font-weight: 800;
+                        color: $TEXT_GREY_NEW;
+                        font-size: updatedSize(20);
+                        // width: 60%;
+
+                    }
+                }
+            }
+        }
+
+
+    }
+}

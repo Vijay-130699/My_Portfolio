@@ -1,0 +1,476 @@
+@import '../../index.scss';
+
+.container {
+    width: 100%;
+    margin-top: 40%;
+
+    .projects_label_container {
+        position: relative;
+        @include flex(column, center, center);
+
+        .project_label_positioned {
+            position: absolute;
+            top: 40%;
+            font-size: updatedSize(50);
+            font-weight: 900;
+            z-index: -1;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .our_project_label {
+            font-size: updatedSize(30);
+            font-weight: 700;
+        }
+    }
+
+    .description_container {
+        width: 100%;
+        @include flex(row, center, center);
+
+        .description_label {
+            width: 100%;
+            font-size: updatedSize(20);
+            font-family: $TSUKUMI_ROUNDED;
+            font-weight: 700;
+            color: $TEXT_GREY_NINTEEN;
+            margin: updatedSize(30) 0;
+            padding: updatedSize(20);
+            text-align: justify;
+
+        }
+    }
+
+    .project_box_component {
+        height: 100%;
+        margin-bottom: updatedSize(50);
+
+        .set_one_container {
+            .project_container {
+                @include flex(column, center, center);
+                row-gap: updatedSize(50);
+                width: 100%;
+
+                .project_one_container {
+                    @include flex(row, center, center);
+                    position: relative; // Ensure proper positioning for the project name
+                    overflow: hidden;
+
+                    .project_image {
+                        width: updatedSize(300);
+                        height: 100%;
+                        transition: box-shadow 0.3s ease, transform 0.3s ease; // Smooth transitions for shadow and transform effects
+
+                        &:hover {
+                            box-shadow: 0 0 10px 5px $STATUS_YELLOW;
+                            transform: scale(1.05); // Slightly enlarges the image on hover
+                        }
+
+                        // Example animation (optional, runs when the element first appears)
+                        animation: fadeIn 0.6s ease-in-out;
+
+                        @keyframes fadeIn {
+                            0% {
+                                opacity: 0;
+                                transform: scale(0.9);
+                            }
+
+                            100% {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
+                    }
+
+                    // Project name styling
+                    .project_name {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: $STATUS_YELLOW; // Yellow background with slight transparency
+                        color: $BACKGROUND_WHITE; // Black text for better contrast
+                        font-size: updatedSize(18); // Adjust as needed
+                        font-family: $POPPINS_ARIAL_SAN_SERIF;
+                        letter-spacing: 0.7px;
+                        font-weight: 900;
+                        opacity: 0; // Initially hidden
+                        transition: opacity 0.3s ease; // Smooth fade-in effect
+                        pointer-events: none; // Prevent interference with hover behavior
+                        @include flex(row, center, center);
+                        padding: updatedSize(25);
+                    }
+
+                    // Show the project name on hover
+                    &:hover .project_name {
+                        opacity: 0.9; // Fully visible
+                        pointer-events: visible;
+                        cursor: pointer
+                    }
+
+                }
+            }
+
+
+        }
+    }
+}
+
+
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .container {
+        width: 100%;
+        margin-top: 15%;
+
+        .projects_label_container {
+            position: relative;
+            @include flex(column, center, center);
+
+            .project_label_positioned {
+                position: absolute;
+                top: 2%;
+                font-size: updatedSize(100);
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .our_project_label {
+                font-size: updatedSize(50);
+                font-weight: 700;
+            }
+        }
+
+        .description_container {
+            width: 100%;
+            @include flex(row, center, center);
+
+            .description_label {
+                width: 70%;
+                font-size: updatedSize(25);
+                font-family: $TSUKUMI_ROUNDED;
+                font-weight: 700;
+                color: $TEXT_GREY_NINTEEN;
+                margin: updatedSize(30) 0;
+                padding: updatedSize(20);
+                text-align: justify;
+            }
+        }
+
+        .project_box_component {
+            height: 100%;
+            margin-bottom: updatedSize(50);
+
+            .set_one_container {
+                .project_container {
+                    @include flex(column, center, center);
+                    row-gap: updatedSize(50);
+                    width: 100%;
+
+                    .project_one_container {
+                        @include flex(row, center, center);
+                        position: relative; // Ensure proper positioning for the project name
+                        overflow: hidden;
+
+                        .project_image {
+                            width: updatedSize(400);
+                            height: 100%;
+                            transition: box-shadow 0.3s ease, transform 0.3s ease; // Smooth transitions for shadow and transform effects
+
+                            &:hover {
+                                box-shadow: 0 0 10px 5px $STATUS_YELLOW;
+                                transform: scale(1.05); // Slightly enlarges the image on hover
+                            }
+
+                            // Example animation (optional, runs when the element first appears)
+                            animation: fadeIn 0.6s ease-in-out;
+
+                            @keyframes fadeIn {
+                                0% {
+                                    opacity: 0;
+                                    transform: scale(0.9);
+                                }
+
+                                100% {
+                                    opacity: 1;
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+
+                        // Project name styling
+                        .project_name {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: $STATUS_YELLOW; // Yellow background with slight transparency
+                            color: $BACKGROUND_WHITE; // Black text for better contrast
+                            display: flex; // Center the text
+                            align-items: center;
+                            justify-content: center;
+                            font-size: updatedSize(20); // Adjust as needed
+                            font-family: $POPPINS_ARIAL_SAN_SERIF;
+                            letter-spacing: 0.7px;
+                            font-weight: 900;
+                            opacity: 0; // Initially hidden
+                            transition: opacity 0.3s ease; // Smooth fade-in effect
+                            pointer-events: none; // Prevent interference with hover behavior
+                        }
+
+                        // Show the project name on hover
+                        &:hover .project_name {
+                            opacity: 0.9; // Fully visible
+                            pointer-events: visible;
+                            cursor: pointer
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:1000px) {
+    .container {
+        width: 100%;
+        margin-top: 15%;
+
+        .projects_label_container {
+            position: relative;
+            @include flex(column, center, center);
+
+            .project_label_positioned {
+                position: absolute;
+                top: 2%;
+                font-size: 7rem;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .our_project_label {
+                font-size: updatedSize(60);
+                font-weight: 700;
+            }
+        }
+
+        .description_container {
+            width: 100%;
+            @include flex(row, center, center);
+
+            .description_label {
+                width: 80%;
+                font-size: updatedSize(27);
+                font-family: $TSUKUMI_ROUNDED;
+                font-weight: 700;
+                color: $TEXT_GREY_NINTEEN;
+                margin: updatedSize(30) 0;
+                padding: updatedSize(20);
+                text-align: justify;
+
+            }
+        }
+
+        .project_box_component {
+            height: 100%;
+            margin-bottom: updatedSize(50);
+
+            .set_one_container {
+                .project_container {
+                    @include flex(row, center, end);
+                    column-gap: updatedSize(50);
+                    width: 100%;
+
+                    .project_one_container {
+                        @include flex(row, center, center);
+                        position: relative; // Ensure proper positioning for the project name
+                        overflow: hidden;
+
+                        .project_image {
+                            width: updatedSize(400);
+                            height: 100%;
+                            transition: box-shadow 0.3s ease, transform 0.3s ease; // Smooth transitions for shadow and transform effects
+
+                            &:hover {
+                                box-shadow: 0 0 10px 5px $STATUS_YELLOW;
+                                transform: scale(1.05); // Slightly enlarges the image on hover
+                            }
+
+                            // Example animation (optional, runs when the element first appears)
+                            animation: fadeIn 0.6s ease-in-out;
+
+                            @keyframes fadeIn {
+                                0% {
+                                    opacity: 0;
+                                    transform: scale(0.9);
+                                }
+
+                                100% {
+                                    opacity: 1;
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+
+                        // Project name styling
+                        .project_name {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: $STATUS_YELLOW; // Yellow background with slight transparency
+                            color: $BACKGROUND_WHITE; // Black text for better contrast
+                            display: flex; // Center the text
+                            align-items: center;
+                            justify-content: center;
+                            font-size: updatedSize(23); // Adjust as needed
+                            font-family: $POPPINS_ARIAL_SAN_SERIF;
+                            letter-spacing: 0.7px;
+                            font-weight: 700;
+                            opacity: 0; // Initially hidden
+                            transition: opacity 0.3s ease; // Smooth fade-in effect
+                            pointer-events: none; // Prevent interference with hover behavior
+                        }
+
+                        // Show the project name on hover
+                        &:hover .project_name {
+                            opacity: 0.9; // Fully visible
+                            pointer-events: visible;
+                            cursor: pointer
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+//Media Queries
+@media screen and (min-width:1001px) {
+    .container {
+        width: 100%;
+        margin-top: 15%;
+
+        .projects_label_container {
+            position: relative;
+            @include flex(column, center, center);
+
+            .project_label_positioned {
+                position: absolute;
+                top: 2%;
+                font-size: 7vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .our_project_label {
+                font-size: 3.5vw;
+                font-weight: 700;
+            }
+        }
+
+        .description_container {
+            width: 100%;
+            @include flex(row, center, center);
+
+            .description_label {
+                width: 80%;
+                font-size: updatedSize(27);
+                font-family: $TSUKUMI_ROUNDED;
+                font-weight: 700;
+                color: $TEXT_GREY_NINTEEN;
+                margin: updatedSize(30) 0;
+                padding: updatedSize(20);
+                text-align: justify;
+
+            }
+        }
+
+        .project_box_component {
+            height: 100%;
+            margin-bottom: updatedSize(50);
+
+            .set_one_container {
+                .project_container {
+                    @include flex(row, center, end);
+                    column-gap: updatedSize(50);
+                    width: 100%;
+
+                    .project_one_container {
+                        @include flex(row, center, center);
+                        position: relative; // Ensure proper positioning for the project name
+                        overflow: hidden;
+
+                        .project_image {
+                            width: updatedSize(490);
+                            height: 100%;
+                            transition: box-shadow 0.3s ease, transform 0.3s ease; // Smooth transitions for shadow and transform effects
+
+                            &:hover {
+                                box-shadow: 0 0 10px 5px $STATUS_YELLOW;
+                                transform: scale(1.05); // Slightly enlarges the image on hover
+                            }
+
+                            // Example animation (optional, runs when the element first appears)
+                            animation: fadeIn 0.6s ease-in-out;
+
+                            @keyframes fadeIn {
+                                0% {
+                                    opacity: 0;
+                                    transform: scale(0.9);
+                                }
+
+                                100% {
+                                    opacity: 1;
+                                    transform: scale(1);
+                                }
+                            }
+                        }
+
+                        // Project name styling
+                        .project_name {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: $STATUS_YELLOW; // Yellow background with slight transparency
+                            color: $BACKGROUND_WHITE; // Black text for better contrast
+                            display: flex; // Center the text
+                            align-items: center;
+                            justify-content: center;
+                            font-size: updatedSize(23); // Adjust as needed
+                            font-family: $POPPINS_ARIAL_SAN_SERIF;
+                            letter-spacing: 0.7px;
+                            font-weight: 700;
+                            opacity: 0; // Initially hidden
+                            transition: opacity 0.3s ease; // Smooth fade-in effect
+                            pointer-events: none; // Prevent interference with hover behavior
+                        }
+
+                        // Show the project name on hover
+                        &:hover .project_name {
+                            opacity: 0.9; // Fully visible
+                            pointer-events: visible;
+                            cursor: pointer
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+    }
+}

@@ -1,0 +1,299 @@
+@import '../../index.scss';
+
+.container {
+    margin-top: 10%;
+    @include flex(row, center, start);
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .label_value_container {
+        @include flex(column, center, center);
+        row-gap: updatedSize(20);
+        width: 35%;
+
+        .label {
+            margin-bottom: updatedSize(40);
+            font-size: updatedSize(30);
+            font-weight: 600;
+        }
+
+        .image_label_container {
+            @include flex(row, center, center);
+            width: 100%;
+            cursor: pointer;
+            gap: updatedSize(40);
+            margin-left: 30%;
+
+            .image {
+                width: updatedSize(25);
+                height: updatedSize(25);
+                cursor: pointer;
+            }
+
+            .location {
+                width: updatedSize(30);
+                height: updatedSize(30);
+            }
+
+            .links_header {
+                cursor: pointer;
+                width: 50%;
+                font-family: "Poppins", Arial, sans-serif;
+                font-size: updatedSize(20);
+                line-height: 1.8;
+                font-weight: 400;
+                color: #999999;
+                text-transform: capitalize;
+            }
+
+            .label_value {
+                cursor: pointer;
+                width: 60%;
+                font-family: "Poppins", Arial, sans-serif;
+                font-size: updatedSize(20);
+                line-height: 1.8;
+                font-weight: 400;
+                color: #999999;
+                text-transform: capitalize;
+                text-align: start;
+            }
+        }
+
+        .image_label_containers {
+            @include flex(row, center, center);
+            width: 100%;
+            cursor: pointer;
+            gap: updatedSize(40);
+            margin-left: 10%;
+            margin-bottom: updatedSize(50);
+
+            .location {
+                width: updatedSize(30);
+                height: updatedSize(30);
+            }
+
+            .label_value {
+                cursor: pointer;
+                width: 62%;
+                font-family: "Poppins", Arial, sans-serif;
+                font-size: updatedSize(20);
+                line-height: 1.8;
+                font-weight: 400;
+                color: #999999;
+                text-align: start;
+            }
+        }
+
+
+        .paragraph {
+            font-family: "Poppins", Arial, sans-serif;
+            font-size: updatedSize(24);
+            line-height: 1.8;
+            font-weight: 400;
+            color: #999999;
+            text-align: center;
+            margin-bottom: 10%
+        }
+
+        .image_container {
+            @include flex(row, center, center);
+            margin-top: 5%;
+            column-gap: updatedSize(50);
+            width: updatedSize(60);
+            height: updatedSize(60);
+
+            .image {
+                padding: updatedSize(5);
+                width: 100%;
+                height: 100%;
+                border: 1px solid $STATUS_YELLOW;
+                border-radius: 45%;
+                background-color: $STATUS_YELLOW;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        @include flex(column, start, start);
+
+        .label_value_container {
+            // display: block;
+            @include flex(column, start, start);
+            width: 100%;
+            margin-top: 30%;
+
+            .label {
+                font-weight: 900;
+                font-size: updatedSize(40);
+            }
+
+            .image_label_container {
+                @include flex(row, space-evenly, start);
+                width: 100%;
+                cursor: pointer;
+                gap: updatedSize(40);
+                margin-left: 0;
+                margin-top: updatedSize(40);
+
+                .image {
+                    width: updatedSize(40);
+                    height: updatedSize(40);
+                    cursor: pointer;
+                }
+
+                .links_header {
+                    cursor: pointer;
+                    width: 50%;
+                    font-family: "Poppins", Arial, sans-serif;
+                    font-size: updatedSize(25);
+                    line-height: 1.8;
+                    font-weight: 400;
+                    color: #999999;
+                    text-transform: capitalize;
+                }
+            }
+
+            .image_label_containers {
+                @include flex(column, center, start);
+                cursor: pointer;
+                margin-left: 0;
+                margin-top: updatedSize(40);
+
+                .location {
+                    width: 100%;
+
+                    height: updatedSize(100);
+                    @include flex(row, center, start);
+                }
+
+                .label_value {
+                    font-family: "Poppins", Arial, sans-serif;
+                    font-size: updatedSize(20);
+                    font-weight: 400;
+                    color: #999999;
+                    text-align: center;
+                    width: 100%;
+                    margin-top: 5%;
+
+                }
+            }
+
+            .paragraph {
+                font-family: "Poppins", Arial, sans-serif;
+                font-size: updatedSize(24);
+                line-height: 1.8;
+                font-weight: 400;
+                color: #999999;
+                text-align: start;
+            }
+
+            .image_container {
+                margin-left: 0;
+                width: 100%;
+
+                .image {
+                    padding: updatedSize(5);
+                    width: updatedSize(70);
+                    height: updatedSize(70);
+                    border: 1px solid $STATUS_YELLOW;
+                    border-radius: 45%;
+                    background-color: $STATUS_YELLOW;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:769px) and (max-width:1200px) {
+    .container {
+        @include flex(column, start, start);
+
+        .label_value_container {
+            // display: block;
+            @include flex(column, start, start);
+            width: 100%;
+            margin-top: 30%;
+
+            .label {
+                font-weight: 900;
+                font-size: updatedSize(60);
+            }
+
+            .image_label_container {
+                @include flex(row, space-evenly, center);
+                width: 100%;
+                cursor: pointer;
+                gap: updatedSize(40);
+                margin-left: 0;
+                margin-top: updatedSize(40);
+
+                .image {
+                    width: updatedSize(40);
+                    height: updatedSize(40);
+                    cursor: pointer;
+                }
+
+                .links_header {
+                    cursor: pointer;
+                    font-family: "Poppins", Arial, sans-serif;
+                    font-size: updatedSize(50);
+                    line-height: 1.8;
+                    font-weight: 400;
+                    color: #999999;
+                    text-transform: capitalize;
+                }
+            }
+
+            .image_label_containers {
+                @include flex(column, center, start);
+                cursor: pointer;
+                margin-left: 0;
+                margin-top: updatedSize(40);
+
+                .location {
+                    width: 100%;
+
+                    height: updatedSize(100);
+                    @include flex(row, center, start);
+                }
+
+                .label_value {
+                    font-family: "Poppins", Arial, sans-serif;
+                    font-size: updatedSize(40);
+                    font-weight: 400;
+                    color: #999999;
+                    text-align: center;
+                    width: 100%;
+                    margin-top: 5%;
+
+                }
+            }
+
+            .paragraph {
+                font-family: "Poppins", Arial, sans-serif;
+                font-size: updatedSize(40);
+                line-height: 1.8;
+                font-weight: 400;
+                color: #999999;
+                text-align: start;
+            }
+
+            .image_container {
+                margin-left: 0;
+                width: 100%;
+
+                .image {
+                    padding: updatedSize(5);
+                    width: updatedSize(70);
+                    height: updatedSize(70);
+                    border: 1px solid $STATUS_YELLOW;
+                    border-radius: 45%;
+                    background-color: $STATUS_YELLOW;
+                }
+            }
+        }
+    }
+}

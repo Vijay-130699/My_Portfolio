@@ -1,0 +1,270 @@
+@import '../../index.scss';
+
+
+.container {
+    margin-top: 15%;
+
+    .achievements_container {
+        position: relative;
+        @include flex(column, center, center);
+
+        .achievements_label_positioned {
+            position: absolute;
+            top: 40%;
+            font-size: updatedSize(50);
+            font-weight: 900;
+            z-index: -1;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .my_achievements_label {
+            font-size: updatedSize(30);
+            font-weight: 700;
+        }
+    }
+
+    .achievements_info_container {
+        margin-top: updatedSize(50);
+        @include flex(column, center, center);
+
+        .achievements_image_container {
+            @include flex(column, center, center);
+            width: 100%;
+
+            .achievementes_image {
+                width: updatedSize(400);
+            }
+        }
+
+        .achievements_list_container {
+            @include flex(column, center, center);
+            margin-top: updatedSize(50);
+            width: 70%;
+
+
+            .achievement_item_container {
+                width: 100%;
+
+                .achievement_label {
+                    margin-top: updatedSize(20);
+                    font-weight: 900;
+                    font-size: 5vw;
+                    color: $STATUS_YELLOW;
+                    border-bottom: 1px solid $STATUS_YELLOW;
+                    font-family: $POPPINS_ARIAL_SAN_SERIF;
+                }
+
+                .achievement_description {
+                    font-family: "Poppins", Arial, sans-serif;
+                    font-size: updatedSize(16);
+                    line-height: 1.8;
+                    font-weight: 400;
+                    color: #999999;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .container {
+        margin-top: 15%;
+
+        .achievements_container {
+            position: relative;
+            @include flex(column, center, center);
+
+            .achievements_label_positioned {
+                position: absolute;
+                top: 40%;
+                font-size: 12vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .my_achievements_label {
+                font-size: 6vw;
+                font-weight: 700;
+            }
+        }
+
+        .achievements_info_container {
+            margin-top: updatedSize(50);
+            @include flex(column, center, center);
+
+            .achievements_image_container {
+                @include flex(column, center, center);
+                width: 100%;
+
+                .achievementes_image {
+                    width: updatedSize(400);
+                }
+            }
+
+            .achievements_list_container {
+                @include flex(column, center, center);
+                margin-top: updatedSize(50);
+                width: 70%;
+
+
+                .achievement_item_container {
+                    width: 100%;
+
+                    .achievement_label {
+                        margin-top: updatedSize(20);
+                        font-weight: 900;
+                        font-size: 5vw;
+                        color: $STATUS_YELLOW;
+                        font-family: $POPPINS_ARIAL_SAN_SERIF;
+                    }
+
+                    .achievement_description {
+                        font-family: "Poppins", Arial, sans-serif;
+                        font-size: updatedSize(20);
+                        line-height: 1.8;
+                        font-weight: 400;
+                        color: #999999;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:1000px) {
+    .container {
+        margin-top: 15%;
+
+        .achievements_container {
+            position: relative;
+            @include flex(column, center, center);
+
+            .achievements_label_positioned {
+                position: absolute;
+                top: 40%;
+                font-size: 12vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .my_achievements_label {
+                font-size: 6vw;
+                font-weight: 700;
+            }
+        }
+
+        .achievements_info_container {
+            margin-top: updatedSize(50);
+            @include flex(column, center, center);
+
+            .achievements_image_container {
+                @include flex(column, center, center);
+                width: 100%;
+
+                .achievementes_image {
+                    width: updatedSize(400);
+                }
+            }
+
+            .achievements_list_container {
+                @include flex(column, center, center);
+                margin-top: updatedSize(50);
+                width: 70%;
+
+
+                .achievement_item_container {
+                    width: 100%;
+
+                    .achievement_label {
+                        margin-top: updatedSize(20);
+                        font-weight: 900;
+                        font-size: 5vw;
+                        color: $STATUS_YELLOW;
+                        font-family: $POPPINS_ARIAL_SAN_SERIF;
+                    }
+
+                    .achievement_description {
+                        font-family: "Poppins", Arial, sans-serif;
+                        font-size: updatedSize(20);
+                        line-height: 1.8;
+                        font-weight: 400;
+                        color: #999999;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1001px) {
+    .container {
+        margin-top: 15%;
+
+        .achievements_container {
+            position: relative;
+            @include flex(column, center, center);
+
+            .achievements_label_positioned {
+                position: absolute;
+                top: 0;
+                font-size: 7vw;
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+            }
+
+            .my_achievements_label {
+                font-size: 3.5vw;
+                font-weight: 700;
+            }
+        }
+
+        .achievements_info_container {
+            margin-top: updatedSize(50);
+            @include flex(row, center, center);
+
+            .achievements_image_container {
+                @include flex(column, center, center);
+                width: 30%;
+
+                .achievementes_image {
+                    width: updatedSize(500);
+                }
+            }
+
+            .achievements_list_container {
+                @include flex(column, center, center);
+                width: 50%;
+                margin: 0 updatedSize(30);
+
+
+                .achievement_item_container {
+                    width: 100%;
+
+                    .achievement_label {
+                        margin-top: updatedSize(20);
+                        font-weight: 900;
+                        font-size: 2.3vw;
+                        color: $STATUS_YELLOW;
+                        font-family: $POPPINS_ARIAL_SAN_SERIF;
+                    }
+
+                    .achievement_description {
+                        font-family: "Poppins", Arial, sans-serif;
+                        font-size: updatedSize(20);
+                        line-height: 1.8;
+                        font-weight: 400;
+                        color: #999999;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}

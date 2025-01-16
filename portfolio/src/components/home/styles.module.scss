@@ -1,0 +1,461 @@
+@import '../../index.scss';
+
+.container {
+    width: calc(100% - 20px);
+    height: 100%;
+    @include flex(column, space-evenly, center);
+    margin-top: 15%;
+
+    .profile_image {
+        width: updatedSize(340);
+        height: updatedSize(340);
+        padding: 20px 0 0 0;
+        // background-color: $STATUS_YELLOW;
+        aspect-ratio: 1/1;
+        order: 1;
+        box-shadow: 0 0 10px 5px $STATUS_YELLOW;
+
+        // Apply animations with classes
+        &.fade_in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        &.fade_out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+    }
+
+    .profile_image:focus {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes shake {
+        0% {
+            transform: translate(1px, 1px) rotate(0deg);
+        }
+
+        10% {
+            transform: translate(-1px, -2px) rotate(-1deg);
+        }
+
+        20% {
+            transform: translate(-3px, 0px) rotate(1deg);
+        }
+
+        30% {
+            transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        40% {
+            transform: translate(1px, -1px) rotate(1deg);
+        }
+
+        50% {
+            transform: translate(-1px, 2px) rotate(-1deg);
+        }
+
+        60% {
+            transform: translate(-3px, 1px) rotate(0deg);
+        }
+
+        70% {
+            transform: translate(3px, 1px) rotate(-1deg);
+        }
+
+        80% {
+            transform: translate(-1px, -1px) rotate(1deg);
+        }
+
+        90% {
+            transform: translate(1px, 2px) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
+        }
+    }
+
+    .name_container {
+        width: 30%;
+        order: 2;
+        @include flex(column, space-evenly, center);
+
+        .hello_label {
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: $STATUS_YELLOW;
+            font-family: $ROBOTO;
+            text-align: center;
+            margin-top: updatedSize(30);
+            margin-bottom: updatedSize(30);
+
+            // Apply animations with classes
+            &.fade_in {
+                animation: fadeIn 0.5s ease-in-out forwards;
+            }
+
+            &.fade_out {
+                animation: fadeOut 0.5s ease-in-out forwards;
+            }
+
+        }
+
+        .self_intro_label {
+            font-weight: 600;
+            font-size: updatedSize(30);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: $ROBOTO;
+            text-align: center;
+            margin-top: updatedSize(20);
+            margin-bottom: updatedSize(20);
+
+            // Apply animations with classes
+            &.fade_in {
+                animation: fadeIn 0.5s ease-in-out forwards;
+            }
+
+            &.fade_out {
+                animation: fadeOut 0.5s ease-in-out forwards;
+            }
+
+            .full_name_color {
+                margin-top: updatedSize(20);
+                color: $STATUS_YELLOW;
+                white-space: nowrap;
+                text-shadow: 2px 2px 4px black, -2px -2px 4px $STATUS_YELLOW;
+                /* Prevent text wrapping */
+                overflow: hidden;
+                /* Hide overflowing text */
+                border-right: 2px solid black;
+                /* Simulate cursor */
+                animation: typing 2s steps(50) 1s infinite alternate, blink 0.5s step-end infinite;
+            }
+
+            @keyframes typing {
+                from {
+                    width: 0;
+                    /* Start with no text visible */
+                }
+
+                to {
+                    width: 100%;
+                    /* Reveal full text */
+                }
+            }
+
+            @keyframes blink {
+                from {
+                    border-color: transparent;
+                    /* Hide cursor */
+                }
+
+                to {
+                    border-color: black;
+                    /* Show cursor */
+                }
+            }
+        }
+
+
+
+
+        .job_title {
+            font-weight: 600;
+            font-size: updatedSize(20);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: $ROBOTO;
+            text-align: center;
+            margin-top: updatedSize(10);
+            margin-bottom: updatedSize(20);
+
+            // Apply animations with classes
+            &.fade_in {
+                animation: fadeIn 0.5s ease-in-out forwards;
+            }
+
+            &.fade_out {
+                animation: fadeOut 0.5s ease-in-out forwards;
+            }
+        }
+
+        // Add fade-in and fade-out animations
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+    }
+
+}
+
+.arrow_container {
+    @include flex(row, center, center);
+    column-gap: updatedSize(30);
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+
+    .arrow {
+        width: updatedSize(40);
+        height: updatedSize(40);
+        border-radius: 50%; // Optional: make it circular
+        padding: 5px;
+        transition: fill 0.3s ease-in-out,
+            stroke 0.3s ease-in-out,
+            background-color 0.3s ease-in-out,
+            border 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            border: 1px solid $BACKGROUND_BLACK_DARK; // Add border on hover
+            background-color: $STATUS_YELLOW; // Change background color
+            fill: $BACKGROUND_BLACK_DARK; // Change fill color
+            stroke: $BACKGROUND_BLACK_DARK; // Change stroke color
+        }
+    }
+
+}
+
+
+
+//media query for 425px - 599px
+@media screen and (min-width:425px) and (max-width:599px) {
+    .container {
+        width: calc(100% - 20px);
+        @include flex(column, space-evenly, center);
+
+        .profile_image {
+            width: updatedSize(400);
+            height: updatedSize(400);
+            border: 2px solid $STATUS_YELLOW;
+            aspect-ratio: 1/1;
+            order: 1;
+        }
+
+        .name_container {
+            order: 2;
+            @include flex(column, space-evenly, center);
+
+            .hello_label {
+                font-weight: 600;
+                font-size: updatedSize(25);
+
+            }
+
+            .self_intro_label {
+                font-weight: 600;
+                font-size: updatedSize(40);
+            }
+
+            .job_title {
+                font-weight: 600;
+                font-size: updatedSize(30);
+
+            }
+        }
+    }
+}
+
+//media query for 600px - 768px
+@media screen and (min-width:600px)and (max-width: 768px) {
+    .container {
+        width: calc(100% - 20px);
+        @include flex(column, space-evenly, center);
+
+        .profile_image {
+            width: updatedSize(580);
+            height: updatedSize(580);
+            border: 2px solid $STATUS_YELLOW;
+            aspect-ratio: 1/1;
+            order: 1;
+        }
+
+        .name_container {
+            order: 2;
+            @include flex(column, space-evenly, center);
+
+            .hello_label {
+                font-weight: 600;
+                font-size: updatedSize(35);
+
+            }
+
+            .self_intro_label {
+                font-weight: 600;
+                font-size: updatedSize(55);
+            }
+        }
+    }
+}
+
+//media query for 769px to 1024px
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        width: calc(100% - 20px);
+        @include flex(row, center, center);
+        gap: updatedSize(50);
+
+
+        .profile_image {
+            width: updatedSize(350);
+            height: updatedSize(350);
+            border: 2px solid $STATUS_YELLOW;
+            aspect-ratio: 1/1;
+            order: 2;
+        }
+
+
+
+        .name_container {
+            order: 1;
+            @include flex(column, space-evenly, center);
+            width: 60%;
+
+            .hello_label {
+                font-weight: 600;
+                font-size: updatedSize(19);
+
+            }
+
+            .self_intro_label {
+                font-weight: 600;
+                font-size: updatedSize(35);
+                text-align: center;
+            }
+
+
+
+
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+    .container {
+        width: calc(100% - 20px);
+        @include flex(row, center, center);
+        gap: updatedSize(50);
+
+        .profile_image {
+            border: 2px solid $STATUS_YELLOW;
+            aspect-ratio: 1/1;
+            order: 2;
+            width: updatedSize(500);
+            height: updatedSize(500);
+        }
+
+
+
+        .name_container {
+            order: 1;
+            @include flex(column, space-evenly, center);
+            width: 50%;
+
+            .hello_label {
+                font-weight: 600;
+                font-size: updatedSize(25);
+
+            }
+
+            .self_intro_label {
+                font-weight: 600;
+                font-size: updatedSize(40);
+            }
+
+            .job_title {
+                font-weight: 600;
+                font-size: updatedSize(25);
+            }
+
+
+        }
+    }
+}
+
+@media screen and (min-width: 1301px) {
+    .container {
+        width: calc(100% - 20px);
+        @include flex(row, center, center);
+        gap: updatedSize(50);
+
+        .profile_image {
+            aspect-ratio: 1/1;
+            order: 2;
+            width: 30%;
+            height: 30%;
+        }
+
+
+
+        .name_container {
+            order: 1;
+            @include flex(column, space-evenly, center);
+            width: 50%;
+
+            .hello_label {
+                font-weight: 600;
+                font-size: updatedSize(30);
+
+            }
+
+            .self_intro_label {
+                font-weight: 600;
+                font-size: updatedSize(50);
+            }
+
+            .job_title {
+                font-weight: 600;
+                font-size: updatedSize(35);
+            }
+
+
+        }
+    }
+}

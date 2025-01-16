@@ -1,0 +1,7 @@
+@import '../../index.scss';
+
+
+.children_container {
+    @include flex(column, center, center);
+    width: 100%;
+}

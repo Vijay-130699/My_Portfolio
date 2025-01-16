@@ -1,0 +1,401 @@
+@import '../../index.scss';
+
+.container {
+    margin-top: 15%;
+
+    .skills_position_container {
+        @include flex(column, center, center);
+        width: 100%;
+        position: relative;
+
+        .skills_label {
+            position: absolute;
+            top: 5%;
+            left: 10;
+            font-size: 7vw;
+            font-weight: 900;
+            z-index: -1;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .my_skills_container {
+            @include flex(column, center, center);
+            width: 100%;
+
+            .my_skills_label {
+                font-size: updatedSize(50);
+                font-weight: 700;
+            }
+        }
+
+        .skills_content {
+            margin-top: 3%;
+            font-size: updatedSize(20);
+            font-family: $TSUKUMI_ROUNDED;
+            font-weight: 700;
+            color: $TEXT_GREY_NINTEEN;
+            padding: updatedSize(20);
+            text-align: justify;
+            width: 60%;
+            @include flex(column, center, center);
+        }
+    }
+
+    .skills_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // Two items per row
+        grid-column: 2;
+        width: 100%;
+        row-gap: updatedSize(30);
+        // margin-bottom: 20%;
+
+        .container {
+            margin-top: 0;
+
+            .progress_container {
+                width: 100%;
+                @include flex(column, center, center);
+
+                .label_value_container {
+                    width: 100%;
+                    @include flex(row, center, start);
+                    margin-bottom: 20px;
+
+                    .label_css {
+                        width: 30%;
+                        font-size: updatedSize(25);
+                        text-transform: capitalize;
+                        font-weight: 600;
+                        font-family: $ROBOTO;
+                    }
+
+                    .value_css {
+                        text-align: end;
+                        width: 40%;
+                        font-family: $ROBOTO_CONDENSED;
+                        font-size: updatedSize(25);
+                        font-weight: 900;
+                        color: $STATUS_YELLOW;
+                    }
+                }
+
+                .progress_bar_css {
+                    width: 70%;
+                    height: updatedSize(20);
+                    appearance: none; // Reset browser default styles for consistent behavior
+
+                    // Smooth transition for width changes
+                    transition: width 0.5s ease-in-out;
+
+                    // Animation for initial fill effect
+                    animation: progressFill 1.5s ease-out forwards;
+
+                    // Background of the progress bar
+                    &::-webkit-progress-bar {
+                        background-color: #e5e5e5; // Light grey background
+                        border-radius: updatedSize(50); // Optional rounded corners
+                    }
+
+                    // Filled portion of the progress bar
+                    &::-webkit-progress-value {
+                        background-color: var(--progress-color, $STATUS_YELLOW); // Default color is yellow
+                        border-radius: updatedSize(50); // Optional rounded corners
+                        transition: width 0.3s ease; // Smooth transition for changes
+                    }
+
+                    // Firefox-specific styling
+                    &::-moz-progress-bar {
+                        background-color: var(--progress-color, $STATUS_YELLOW); // Default color is yellow
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+
+        .leftItem {
+            grid-column: 1; // Force odd items to the left
+        }
+
+        .rightItem {
+            grid-column: 2; // Force even items to the right
+        }
+    }
+
+    // Keyframe animation for the progress bar filling effect
+    @keyframes progressFill {
+        0% {
+            width: 0%; // Start with no width
+        }
+
+        100% {
+            width: var(--progress-width, 70%); // Animate to final width
+        }
+    }
+}
+
+
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .container {
+
+        .skills_position_container {
+            @include flex(column, center, center);
+            width: 100%;
+            position: relative;
+
+            .skills_label {
+                position: absolute;
+                top: 10%;
+                left: 10;
+                font-size: updatedSize(70);
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+
+            }
+
+            .my_skills_container {
+                @include flex(column, center, center);
+                width: 100%;
+
+                .my_skills_label {
+                    font-size: updatedSize(30);
+                    font-weight: 700;
+                }
+            }
+
+            .skills_content {
+                margin-top: 3%;
+                font-size: updatedSize(23);
+                font-family: $TSUKUMI_ROUNDED;
+                font-weight: 700;
+                color: $TEXT_GREY_NINTEEN;
+                width: 80%;
+                text-align: justify;
+                @include flex(column, center, center);
+            }
+        }
+
+        .skills_container {
+            width: 100%;
+            row-gap: updatedSize(30);
+            @include flex(column, center, center);
+
+            .container {
+                margin-top: 0;
+                width: 100%;
+
+                .progress_container {
+                    width: 100%;
+                    @include flex(column, center, center);
+
+                    .label_value_container {
+                        width: 100%;
+                        @include flex(row, center, start);
+                        margin-bottom: 20px;
+
+                        .label_css {
+                            width: 30%;
+                            font-size: updatedSize(20);
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            font-family: $ROBOTO;
+                        }
+
+                        .value_css {
+                            text-align: end;
+                            width: 40%;
+                            font-family: $ROBOTO_CONDENSED;
+                            font-size: updatedSize(20);
+                            font-weight: 900;
+                            color: $STATUS_YELLOW;
+                        }
+                    }
+
+                    .progress_bar_css {
+                        width: 70%;
+                        height: updatedSize(20);
+                        appearance: none; // Reset browser default styles for consistent behavior
+
+                        // Smooth transition for width changes
+                        transition: width 0.5s ease-in-out;
+
+                        // Animation for initial fill effect
+                        animation: progressFill 1.5s ease-out forwards;
+
+                        // Background of the progress bar
+                        &::-webkit-progress-bar {
+                            background-color: #e5e5e5; // Light grey background
+                            border-radius: updatedSize(50); // Optional rounded corners
+                        }
+
+                        // Filled portion of the progress bar
+                        &::-webkit-progress-value {
+                            background-color: var(--progress-color, $STATUS_YELLOW); // Default color is yellow
+                            border-radius: updatedSize(50); // Optional rounded corners
+                            transition: width 0.3s ease; // Smooth transition for changes
+                        }
+
+                        // Firefox-specific styling
+                        &::-moz-progress-bar {
+                            background-color: var(--progress-color, $STATUS_YELLOW); // Default color is yellow
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+
+            .leftItem {
+                grid-column: 1; // Force odd items to the left
+            }
+
+            .rightItem {
+                grid-column: 2; // Force even items to the right
+            }
+        }
+
+        // Keyframe animation for the progress bar filling effect
+        @keyframes progressFill {
+            0% {
+                width: 0%; // Start with no width
+            }
+
+            100% {
+                width: var(--progress-width, 70%); // Animate to final width
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:425px) {
+    .container {
+
+        .skills_position_container {
+            @include flex(column, center, center);
+            width: 100%;
+            position: relative;
+
+            .skills_label {
+                position: absolute;
+                top: 5%;
+                left: 10;
+                font-size: updatedSize(50);
+                font-weight: 900;
+                z-index: -1;
+                color: rgba(255, 255, 255, 0.1);
+
+            }
+
+            .my_skills_container {
+                @include flex(column, center, center);
+                width: 100%;
+
+                .my_skills_label {
+                    font-size: updatedSize(30);
+                    font-weight: 600;
+                }
+            }
+
+            .skills_content {
+                margin-top: 8%;
+                font-size: updatedSize(23);
+                font-family: $TSUKUMI_ROUNDED;
+                font-weight: 700;
+                color: $TEXT_GREY_NINTEEN;
+                width: 80%;
+                text-align: justify;
+                @include flex(column, center, center);
+            }
+        }
+
+        .skills_container {
+            width: 100%;
+            row-gap: updatedSize(30);
+            @include flex(column, center, center);
+
+            .container {
+                margin-top: 0;
+                width: 100%;
+
+                .progress_container {
+                    width: 100%;
+                    @include flex(column, center, center);
+
+                    .label_value_container {
+                        width: 100%;
+                        @include flex(row, center, start);
+                        margin-bottom: 20px;
+
+                        .label_css {
+                            width: 30%;
+                            font-size: updatedSize(20);
+                            text-transform: capitalize;
+                            font-weight: 600;
+                            font-family: $ROBOTO;
+                        }
+
+                        .value_css {
+                            text-align: end;
+                            width: 40%;
+                            font-family: $ROBOTO_CONDENSED;
+                            font-size: updatedSize(20);
+                            font-weight: 900;
+                            color: $STATUS_YELLOW;
+                        }
+                    }
+
+                    .progress_bar_css {
+                        width: 70%;
+                        height: updatedSize(20);
+                        appearance: none; // Reset browser default styles for consistent behavior
+
+                        // Smooth transition for width changes
+                        transition: width 0.5s ease-in-out;
+
+                        // Animation for initial fill effect
+                        animation: progressFill 1.5s ease-out forwards;
+
+                        // Background of the progress bar
+                        &::-webkit-progress-bar {
+                            background-color: #e5e5e5; // Light grey background
+                            border-radius: updatedSize(50); // Optional rounded corners
+                        }
+
+                        // Filled portion of the progress bar
+                        &::-webkit-progress-value {
+                            background-color: var(--progress-color, $STATUS_YELLOW); // Default color is yellow
+                            border-radius: updatedSize(50); // Optional rounded corners
+                            transition: width 0.3s ease; // Smooth transition for changes
+                        }
+
+                        // Firefox-specific styling
+                        &::-moz-progress-bar {
+                            background-color: var(--progress-color, $STATUS_YELLOW); // Default color is yellow
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+
+            .leftItem {
+                grid-column: 1; // Force odd items to the left
+            }
+
+            .rightItem {
+                grid-column: 2; // Force even items to the right
+            }
+        }
+
+        // Keyframe animation for the progress bar filling effect
+        @keyframes progressFill {
+            0% {
+                width: 0%; // Start with no width
+            }
+
+            100% {
+                width: var(--progress-width, 70%); // Animate to final width
+            }
+        }
+    }
+}

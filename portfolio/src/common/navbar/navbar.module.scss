@@ -1,0 +1,223 @@
+@import '../../index.scss';
+
+.container {
+    @include flex(row, space-around, center);
+    position: relative;
+
+    .name {
+        font-size: updatedSize(40);
+        font-family: $TSUKUMI_ROUNDED;
+        letter-spacing: updatedSize(3);
+        text-transform: uppercase;
+        padding: updatedSize(30);
+        text-align: center;
+    }
+
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar_container {
+        display: none;
+    }
+
+    .navbar_children_container {
+        background-color: $STATUS_YELLOW;
+        position: absolute;
+        width: 100%;
+        top: 80%;
+        display: block;
+        @include flex(column, space-between, start);
+        row-gap: updatedSize(15);
+        transition: .5s all ease;
+        padding: updatedSize(8);
+        text-transform: capitalize;
+        z-index: 1;
+
+
+        .navbar_item label {
+            padding: updatedSize(10) updatedSize(30);
+            font-size: updatedSize(20);
+            font-family: $ROBOTO;
+            letter-spacing: 2px;
+            @include flex(row, space-between, center);
+        }
+
+        .navbar_children_container .navbar_item label:hover {
+            background-color: $BACKGROUND_BLACK;
+            padding: updatedSize(10) updatedSize(30);
+            color: $STATUS_YELLOW;
+            transition: .5s all ease;
+            outline: none;
+        }
+
+        .active_navbar_item {
+            color: $BACKGROUND_WHITE;
+            background-color: $BACKGROUND_BLACK;
+            font-size: updatedSize(20);
+            font-family: $ROBOTO;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            padding: updatedSize(20) 0;
+            width: 100%;
+            @include flex(row, space-between, center);
+            transition: .5s all ease;
+        }
+
+        .active_navbar_item label {
+            color: $STATUS_YELLOW;
+            transition: .5s all ease;
+            padding: updatedSize(10) updatedSize(30);
+        }
+
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+    .container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: updatedSize(80);
+        z-index: 1;
+        /* Ensure it stays above other content */
+        background-color: $BACKGROUND_BLACK_DARK;
+        /* Add a background to prevent overlap with content */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        .name {
+            font-size: updatedSize(40);
+            font-family: $ROBOTO;
+            letter-spacing: updatedSize(2);
+            text-transform: uppercase;
+            padding: updatedSize(30);
+        }
+
+
+        .navbar_container {
+            @include flex(row, start, center);
+            width: 100%;
+            column-gap: updatedSize(20);
+
+            .navbar_item {
+                font-size: updatedSize(18);
+                font-family: $ROBOTO;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+                // padding: 0 updatedSize(30);
+                @include flex(row, space-evenly, center);
+            }
+
+            .navbar_item label {
+                color: $BACKGROUND_WHITE;
+            }
+
+            .navbar_item label:hover {
+                transition: .5s all ease;
+                padding: updatedSize(10) 0;
+                border-bottom: updatedSize(4) solid $STATUS_YELLOW;
+                outline: none;
+            }
+
+            .active_navbar_item {
+                font-size: updatedSize(18);
+                font-family: $ROBOTO;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+                // padding: 0 updatedSize(30);
+                @include flex(row, space-between, center);
+            }
+
+            .active_navbar_item label {
+                color: $STATUS_YELLOW;
+                border-bottom: updatedSize(4) solid $STATUS_YELLOW;
+                transition: .5s all ease;
+                padding: updatedSize(10) 0;
+            }
+        }
+
+        .navbar_children_container {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    .container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: updatedSize(80);
+        z-index: 1;
+        /* Ensure it stays above other content */
+        background-color: $BACKGROUND_BLACK_DARK;
+        /* Add a background to prevent overlap with content */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        .name {
+            font-size: updatedSize(40);
+            font-family: $ROBOTO;
+            letter-spacing: updatedSize(2);
+            text-transform: uppercase;
+            padding: updatedSize(30);
+        }
+
+
+        .navbar_container {
+            @include flex(row, center, center);
+            width: 100%;
+            column-gap: updatedSize(30);
+
+            .navbar_item {
+                font-size: updatedSize(18);
+                font-family: $ROBOTO;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+                // padding: 0 updatedSize(30);
+                @include flex(row, space-evenly, center);
+            }
+
+            .navbar_item label {
+                color: $BACKGROUND_WHITE;
+            }
+
+            .navbar_item label:hover {
+                transition: .5s all ease;
+                padding: updatedSize(10) 0;
+                border-bottom: updatedSize(4) solid $STATUS_YELLOW;
+                outline: none;
+            }
+
+            .active_navbar_item {
+                font-size: updatedSize(18);
+                font-family: $ROBOTO;
+                letter-spacing: 2px;
+                text-transform: capitalize;
+                // padding: 0 updatedSize(30);
+                @include flex(row, space-between, center);
+            }
+
+            .active_navbar_item label {
+                color: $STATUS_YELLOW;
+                border-bottom: updatedSize(4) solid $STATUS_YELLOW;
+                transition: .5s all ease;
+                padding: updatedSize(10) 0;
+            }
+        }
+
+        .navbar_children_container {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+        }
+    }
+}

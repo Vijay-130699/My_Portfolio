@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Tsukimi+Rounded&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Tsukimi+Rounded&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@function updatedSize($size) {
+  $newSize: $size - ($size * 0.15);
+  @return #{$newSize}px;
+}
+
+// COLORS
+$ACCENT_RED: #ed2127;
+$LIGHT_GREY: #f4f4f4;
+$LIGHT_GREY_TWO: #fafafa;
+$LIGHT_PINK: #fff7f7;
+$GREY: #575757;
+$TEXT_GREY_SIX: #505050;
+$TEXT_GREY_DARK: #525252;
+$DARK_GREY: #e4e4e4;
+$TEXT_LIGHT: #b0b0b0;
+$TEXT_DARK: #767676;
+$TEXT_BLACK: #292929;
+$TEXT_GREY: #868686;
+$TEXT_GREY_FIVE: #787878;
+$TEXT_GREY_TWO: #878787;
+$TEXT_GREY_EIGHT: #898989;
+$TEXT_GREY_SEVENTEEN: #363636;
+$BACKGROUND_BLACK: #202020;
+$BACKGROUND_BLACK_DARK: #000;
+$BACKGROUND_WHITE: #fff;
+$MODAL_BACKGROUND: #0000008c;
+$BORDER_GREY: #969696;
+$TEXT_GREEN: #38a34f;
+$TEXT_GREEN_TWO: #ebfff0;
+$BORDER: #c1c1c1;
+$DISABLED: #c0c0c0;
+$TEXT_GREY_THREE: #c7c7c7;
+$TEXT_GREY_TEN: #c9c9c9;
+$TEXT_GREY_FOUR: #ccc;
+$TEXT_GREY_SEVEN: #464665;
+$TEXT_GREY_NINE: #7d7d7d;
+$TEXT_GREY_BLACK: #4b4b4b;
+$TEXT_GREY_ELEVEN: #f8f8f8;
+$TABLE_HEADER: #ebebeb;
+$TABLE_BORDER: #909090;
+$TEXT_GREY_TWELVE: #dcdcdc;
+$TEXT_BLUE: #3687d2;
+$TABLE_HEADER: #ebebeb;
+$TABLE_BORDER: #909090;
+$BOX_SHADOW: 0px 0px 10px rgba(0, 0, 0, 0.1);
+$STATUS_GREEN: #0b9d3d;
+$STATUS_YELLOW: #ffbd39;
+$STATUS_GREY: #434343;
+$STATUS_RED: #f73e3e;
+$STATUS_BORDER: #5e5e5e;
+$TEXT_GREY_THIRTEEN: #6c6c6c;
+$TEXT_BLUE_TWO: #47bccc;
+$TEXT_PEACH: #fff1e7;
+$TEXT_PINK: #bc63cb;
+$TEXT_INDIGO: #8549a9;
+$TEXT_BLUE_THREE: #3a4be0;
+$TEXT_GREY_NINTEEN: #b4b0b0;
+$TEXT_GREY_TWENTY: #7e7e7e;
+$TEXT_LINK: #286df4;
+$TEXT_GREY_FOURTEEN: #4f4f4f;
+$TEXT_GREY_TWENTYONE: #6b6b6b;
+$TEXT_GREY_NEW: #999999;
+$FF_RED: #ff1c4e;
+$PURPLE_7E: #7e0cfd;
+$ROBOTO: "Roboto", sans-serif;
+$ROBOTO_CONDENSED: "Roboto Condensed", sans-serif;
+$TSUKUMI_ROUNDED: "Tsukimi Rounded", sans-serif;
+$JOSEFIN_SANS: "Josefin Sans", sans-serif;
+$IBM_PLEX_SANS: 'IBM Plex Sans', serif;
+$POPPINS_ARIAL_SAN_SERIF: 'Poppins', Arial, sans-serif;
+// FONT SIZES
+$FONT_SIZE_12: 12px;
+$FONT_SIZE_14: 14px;
+$FONT_SIZE_16: 16px;
+$FONT_SIZE_18: 18px;
+$FONT_SIZE_20: 20px;
+$FONT_SIZE_22: 22px;
+$FONT_SIZE_24: 24px;
+$FONT_SIZE_26: 26px;
+$FONT_SIZE_28: 28px;
+$FONT_SIZE_30: 30px;
+$FONT_SIZE_32: 32px;
+
+// MIXINS
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-justify($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+}
+
+@mixin flex-center-align($direction) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+}
+
+body {
+  // background-color: $BACKGROUND_BLACK_DARK;
+  background: $BACKGROUND_BLACK_DARK;
+  color: $BACKGROUND_WHITE;
+  font-family: $ROBOTO;
+  font-size: $FONT_SIZE_16;
+  margin: 0;
+}
