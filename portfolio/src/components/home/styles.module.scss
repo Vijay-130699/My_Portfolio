@@ -1,7 +1,6 @@
 @import '../../index.scss';
 
 .container {
-    width: calc(100% - 20px);
     height: 100%;
     @include flex(column, space-evenly, center);
     margin-top: 15%;
@@ -113,8 +112,8 @@
             color: $STATUS_YELLOW;
             font-family: $ROBOTO;
             text-align: center;
-            margin-top: updatedSize(30);
-            margin-bottom: updatedSize(30);
+            // margin-top: updatedSize(30);
+            // margin-bottom: updatedSize(30);
 
             // Apply animations with classes
             &.fade_in {
@@ -268,7 +267,7 @@
 //media query for 425px - 599px
 @media screen and (min-width:425px) and (max-width:599px) {
     .container {
-        width: calc(100% - 20px);
+
         @include flex(column, space-evenly, center);
 
         .profile_image {
@@ -306,7 +305,7 @@
 //media query for 600px - 768px
 @media screen and (min-width:600px)and (max-width: 768px) {
     .container {
-        width: calc(100% - 20px);
+
         @include flex(column, space-evenly, center);
 
         .profile_image {
@@ -338,7 +337,7 @@
 //media query for 769px to 1024px
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .container {
-        width: calc(100% - 20px);
+
         @include flex(row, center, center);
         gap: updatedSize(50);
 
@@ -379,7 +378,7 @@
 
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
     .container {
-        width: calc(100% - 20px);
+
         @include flex(row, center, center);
         gap: updatedSize(50);
 
@@ -421,7 +420,7 @@
 
 @media screen and (min-width: 1301px) {
     .container {
-        width: calc(100% - 20px);
+
         @include flex(row, center, center);
         gap: updatedSize(50);
 

@@ -4,6 +4,7 @@ export const i_am_label = 'I am';
 export const navbar_labels = ['home', 'about', 'resume', 'skills', 'projects', 'achievements', 'contact'];
 export const job_title = 'Frontend Developer';
 export const description = 'web developer';
+export const job_role = 'Software Engineer'
 export const i_am_a_label = 'I am a';
 export const place = 'in Chennai,India';
 export const hello_labels = 'Hello !'
